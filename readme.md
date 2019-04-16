@@ -29,6 +29,7 @@ $ git clone <link> estoque-backend
 # Entre no repositório criado e crie o docker-compose.yml. Já existe um modelo (docker-compose.default.yml):
 $ cd estoque-backend
 $ sudo cp docker-compose.default.yml docker-compose.yml
+$ sudo cp .env.example .env
 
 # Crie o container da Api e instale as dependencias.
 $ sudo docker-compose up -d
