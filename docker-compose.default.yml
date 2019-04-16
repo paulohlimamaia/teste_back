@@ -20,4 +20,4 @@ services:
     links:
       - estoque-mysql
     ports:
-      - 8001:80
+      - 8000:80
