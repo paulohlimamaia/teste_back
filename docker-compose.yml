@@ -1,0 +1,23 @@
+version: '3'
+services:
+  estoque-mysql:
+    image: mysql:5.7
+    container_name: estoque-mysql
+    environment:
+      MYSQL_DATABASE: estoque
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    stdin_open: true
+    tty: true
+
+  estoque-backend:
+    image: estoque-backend
+    container_name: estoque-backend
+    volumes:
+      - ./:/var/www/html
+      - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+    working_dir: /var/www/html
+    links:
+      - estoque-mysql
+    ports:
+      - 8001:80
