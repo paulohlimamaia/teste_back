@@ -31,7 +31,8 @@ $ cd estoque-backend
 $ sudo cp docker-compose.default.yml docker-compose.yml
 $ sudo cp .env.example .env
 
-# Crie o container da Api e instale as dependencias.
+# Crie a imagem e o container da Api e instale as dependencias.
+$ sudo docker build -t estoque-backend .
 $ sudo docker-compose up -d
 $ sudo docker-compose exec estoque-backend composer install
 $ sudo docker-compose exec estoque-backend chmod 777 -R vendor
@@ -39,5 +40,5 @@ $ sudo docker-compose exec estoque-backend chmod 777 -R vendor
 # Execute o comando abaixo para configurar a Api.
 $ sudo docker-compose exec estoque-backend php artisan migrate 
 
-# Após a configuração basta rodar a Api.
+# Após a configuração basta acessar a Api.
 $ http://localhost:8000

@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: estoque-mysql
+    environment:
+      MYSQL_DATABASE: estoque
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_PORT: 3307
+      MYSQL_ENTRYPOINT_INITDB: ./mysql/docker-entrypoint-initdb.d
+    stdin_open: true
+    tty: true
+
+  estoque-backend:
+    image: estoque-backend
+    container_name: estoque-backend
+    volumes:
+      - ./:/var/www/html
+      - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+    working_dir: /var/www/html
+    links:
+      - mysql
+    ports:
+      - 8000:80
