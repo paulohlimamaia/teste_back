@@ -39,6 +39,8 @@ $ sudo docker-compose exec estoque-backend chmod 777 -R vendor
 
 # Execute o comando abaixo para configurar a Api.
 $ sudo docker-compose exec estoque-backend php artisan migrate 
+$ sudo docker-compose exec estoque-backend php artisan key:generate
+$ sudo docker-compose exec estoque-backend php artisan config:cache
 
 # Após a configuração basta acessar a Api.
 $ http://localhost:8000
