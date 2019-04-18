@@ -30,6 +30,7 @@ $ git clone git@github.com:paulohlimamaia/teste_back.git estoque-backend
 $ cd estoque-backend
 $ sudo cp docker-compose.default.yml docker-compose.yml
 $ sudo cp .env.example .env
+- Certifique-se que a porta 8000 está livre em seu ambiente.
 
 # Crie a imagem e o container da Api e instale as dependencias.
 $ composer install
