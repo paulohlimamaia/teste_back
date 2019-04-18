@@ -37,14 +37,14 @@ $ composer install
 $ sudo docker build -t estoque-backend .
 $ sudo docker-compose up -d
 
-# Checar se o container do MySQL subiu corretamente.
-$ sudo docker ps (Procure por mysql:5.7)
-# Caso o container não tenha iniciado corretamente (Comum na instalaçao inicial) é só rodar o comando abaixo novamente.
-$ sudo docker-compose up -d
-
 # Execute o comando abaixo para configurar a Api.
 $ sudo docker-compose exec estoque-backend chmod 777 -R vendor
-$ sudo docker-compose exec estoque-backend php artisan migrate 
+$ sudo docker-compose exec estoque-backend php artisan migrate
+## Caso o comando acima não funcione , cheque se o container do MySQL subiu corretamente.
+## $ sudo docker ps (Procure por mysql:5.7)
+### Caso o container não tenha iniciado corretamente (Comum na instalaçao inicial) é só rodar o comando abaixo novamente.
+## $ sudo docker-compose up -d
+## $ sudo docker-compose exec estoque-backend php artisan migrate
 $ sudo docker-compose exec estoque-backend php artisan key:generate
 $ sudo docker-compose exec estoque-backend php artisan config:cache
 
