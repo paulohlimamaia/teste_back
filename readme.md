@@ -24,7 +24,7 @@ Para instalar a Api do projeto basta seguir os passos abaixo:
 
 ```
 # clone o repositorio
-$ git clone <link> estoque-backend
+$ git clone git@github.com:paulohlimamaia/teste_back.git estoque-backend
 
 # Entre no repositório criado e crie o docker-compose.yml. Já existe um modelo (docker-compose.default.yml):
 $ cd estoque-backend
